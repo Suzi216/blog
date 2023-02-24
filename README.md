@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Catalog App\] ](#-catalog-app-)
+- [📖 \[Blog App\] ](#-catalog-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -117,7 +117,7 @@ To run tests, run the following command:
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **FREHIYWOT Nega**
+👤 **Suzana Marsela**
 - GitHub: [@Suzi216](https://github.com/Suzi216)
 - LinkedIn: [suzanamarsela](https://www.linkedin.com/in/suzana-marsela/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -138,7 +138,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ginabeki/Catalog-App/issues).
+Feel free to check the [issues page](https://github.com/Suzi216/blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,6 +167,6 @@ I would like to thank Microverse for the project idea
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENCE) licensed.
+This project is [MIT](./MIT) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
