@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
         user.photo = 'https://'
         user.bio = 'Deeveloper'
       end
-      comment.text= 'First Comment'
+      comment.text = 'First Comment'
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe Comment, type: :model do
       comment.author = subject.author
       comment.text = 'second comment'
     end
-    
+
     expect(subject.post.comments_counter).to eq(2)
   end
 end

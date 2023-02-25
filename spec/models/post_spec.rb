@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
       end
     end
   end
- before { subject.save }
+  before { subject.save }
 
   it 'title should be present' do
     subject.title = nil
@@ -26,10 +26,9 @@ RSpec.describe Post, type: :model do
   end
 
   it 'title should be less than or equal to 250 characters' do
-    subject.title = 'a' * 252 
+    subject.title = 'a' * 252
     expect(subject).to_not be_valid
   end
-
 
   it 'comments_counter should be greater than or equal to 0' do
     subject.comments_counter = -1
@@ -48,5 +47,4 @@ RSpec.describe Post, type: :model do
   it 'Not responde because of private method' do
     expect(subject).to_not respond_to(:update_posts_counter)
   end
-
 end

@@ -15,5 +15,4 @@ describe Like, type: :model do
   it 'Not responde because of private method' do
     expect(@like).to_not respond_to(:update_likes_counter)
   end
-
 end

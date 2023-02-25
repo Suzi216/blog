@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject { User.new(name: 'suzana', photo: 'https://', posts_counter: 10, bio: 'Developer') }
-  
+
   before { subject.save }
 
   it 'Name should exist' do
@@ -19,5 +19,4 @@ RSpec.describe User, type: :model do
     subject.posts_counter = -5
     expect(subject).to_not be_valid
   end
-
 end
