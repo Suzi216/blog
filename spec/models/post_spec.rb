@@ -43,5 +43,4 @@ RSpec.describe Post, type: :model do
   it 'test update_posts_counter method' do
     expect(subject.author.posts_counter).to eq(3)
   end
-
 end

@@ -16,4 +16,4 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('User details')
     end
   end
- end
+end
