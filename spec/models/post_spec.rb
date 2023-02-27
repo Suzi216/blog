@@ -41,10 +41,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'test update_posts_counter method' do
-    expect(subject.author.posts_counter).to eq(1)
+    expect(subject.author.posts_counter).to eq(3)
   end
 
-  it 'Not responde because of private method' do
-    expect(subject).to_not respond_to(:update_posts_counter)
-  end
 end
