@@ -1,1 +1,22 @@
 <h1>List of all posts by user </h1>
+
+<div>
+
+       <h3> <%= @user.name %> </h3> <br>
+     
+      <% @user.recent_posts.each do |post| %>
+
+       <div class="card-header">
+       <div>
+        <%= post.title %> 
+        <%= post.text %>  
+        </div> <br>
+              <div>
+            <% post.recent_comments.each do |comment| %>
+              <p><%= comment.author.name %>: <%= comment.text %></p>
+              <% end %>
+
+          </div>
+       </div>
+      <% end %>
+<div>

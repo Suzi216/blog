@@ -1,1 +1,17 @@
 <h1>User details</h1>
+
+<div class="user-list d-flex flex-wrap">
+      
+     <h3> <%= @user.name %> </h3> <br>
+      <h3><%= @user.bio %> </h3><br>
+      <% @user.recent_posts.each do |post| %>
+       <div class="card-header">
+        <%= post.title %>
+        <%= post.text %>
+       </div>
+      <% end %>
+
+      <img src="<%= @user.photo %>"><br>
+        <%# <%= render partial: 'shared/user-card', locals: { user: user } %>
+
+<div>
