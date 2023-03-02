@@ -1,16 +1,15 @@
 <h1>Post details</h1>
 
-<div>
-
-    <h3> <%= @user.name %> </h3> <br>      
-        <%= @post.text %>  
+<div class="border h-50 w-50 p-2 m-2 border-dark">
+    <%= @post.title %> <br>  
+    <%= @post.text %>  
 </div> <br>
-             <div class="card mb-3 border-secondary" style="width: 540px;">
-          <div >
-            <% @comments.each do |comment| %>
-              <p ><%= comment.author.name %>: <%= comment.text %></p>
+<div class="card mb-3 border-secondary" style="width: 540px;">
+    <div >
+      <% @comments.each do |comment| %>
+          <p ><%= comment.author.name %>: <%= comment.text %></p>
               <% end %>
-          </div>
+    </div>
       </div>
 
 </div>

@@ -1,22 +1,21 @@
-<h1>List of all posts by user </h1>
 
 <div>
 
-       <h3> <%= @user.name %> </h3> <br>
+  <h3 class="border ps-2 w-25 m-2 p-4 border-dark"> <%= @user.name %> </h3> <br>
      
       <% @user.recent_posts.each do |post| %>
 
-       <div class="card-header">
        <div>
-        <%= post.title %> 
+       <div class="border h-50 w-50 p-2 m-2 border-dark">
+        <%= post.title %> <br>
         <%= post.text %>  
-        </div> <br>
-              <div>
+        </div> 
+        <div class="border h-50 w-50 p-2 m-2 border-primary">
             <% post.recent_comments.each do |comment| %>
-              <p><%= comment.author.name %>: <%= comment.text %></p>
+              <p><%= comment.author.name %>
+              <%= comment.text %></p>
               <% end %>
-
-          </div>
+        </div> <br>
        </div>
       <% end %>
 <div>

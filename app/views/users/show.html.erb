@@ -1,12 +1,18 @@
 <h1>User details</h1>
 
-<div class="user-list d-flex flex-wrap">
-      
-     <h3> <%= @user.name %> </h3> <br>
-      <h3><%= @user.bio %> </h3><br>
+<div>
+  <div class="ml-3">
+  <h4 class="border ps-2 w-25 m-2 p-4 border-dark"> <%= @user.name %> </h4> 
+  </div>
+     <div class="border h-50 m-2 w-50 p-2 border-dark">
+      <span> bio</span> <br>
+      <%= @user.bio %>
+
+      </div><br>
+
       <% @user.recent_posts.each do |post| %>
-       <div class="card-header">
-        <%= post.title %>
+       <div class="border h-50 w-50 p-2 m-2 border-dark">
+        <%= post.title %> <br> <br>
         <%= post.text %>
        </div>
       <% end %>

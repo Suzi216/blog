@@ -1,11 +1,8 @@
-<h1>List of All Users</h1>
 
-<%# <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %> 
-
-<div class="user-list d-flex flex-wrap">
+<div >
   <% @users.each do |user| %>
-
-   <h2><%= user.name  %> </h2><br>
-
+ <div class="center-block ps-5 pt-5">
+   <h2 class="border h-50 w-50 p-5  border-dark"><%= user.name  %> </h2><br>
+  </div>
   <% end %>
 <div>
