@@ -17,7 +17,7 @@
       </div>  <br>
       <% @user.recent_posts.each do |post| %>
        <div class="border mb-2 m-5 p-3 border-dark" style="max-width: 1140px;">
-        <%= post.title %> <br> <br>
+       Post: #<%= post.id %> <br> <br>
         <%= post.text %> <br>
         <div class="d-flex flex-row justify-content-end" > 
           <p class="m-0">Comments <%= post.comments_count%>,  
@@ -25,7 +25,10 @@
         </p>
        </div>
       <% end %>
+  <div class="  mb-2 m-5 text-center" style="max-width: 1140px;">
+  
     <div class="text-center ">
       <button type="button" class="text"> See all posts</button>
     </div>
+  </div>
 <div>
