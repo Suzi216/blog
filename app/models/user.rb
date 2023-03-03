@@ -13,5 +13,4 @@ class User < ApplicationRecord
   def orders
     posts.all.count
   end
-
 end
