@@ -1,23 +1,31 @@
-<h1>User details</h1>
+<h1  class='text-center mt-4'>User details</h1>
 
-<div>
-  <div class="ml-3">
-  <h4 class="border ps-2 w-25 m-2 p-4 border-dark"> <%= @user.name %> </h4> 
-  </div>
-     <div class="border h-50 m-2 w-50 p-2 border-dark">
-      <span> bio</span> <br>
+<div class="">
+   <div class=" d-flex mb-2 m-5 text-center" style="max-width: 1140px;">
+        <div class="col-md-4">
+          <img src="<%= @user.photo %>" class="img-fluid rounded-start" >
+        </div>
+        <div class="d-flex w-100 border p-4 justify-content-between align-items-end border-dark">
+        <h2 class="pe-5"><%= @user.name  %> </h2>
+        <span> Number of posts: <%= @user.orders  %> <span>
+        </div>
+
+  </div> <br>
+      <div class="border mb-2 m-5 p-4 border-dark" style="max-width: 1140px;">
+       <span>bio </span> <br>
       <%= @user.bio %>
-
-      </div><br>
-
+      </div>  <br>
       <% @user.recent_posts.each do |post| %>
-       <div class="border h-50 w-50 p-2 m-2 border-dark">
+       <div class="border mb-2 m-5 p-3 border-dark" style="max-width: 1140px;">
         <%= post.title %> <br> <br>
-        <%= post.text %>
+        <%= post.text %> <br>
+        <div class="d-flex flex-row justify-content-end" > 
+          <p class="m-0">Comments <%= post.comments_count%>,  
+          Likes <%= post.likes_count%> </div> 
+        </p>
        </div>
       <% end %>
-
-      <img src="<%= @user.photo %>"><br>
-        <%# <%= render partial: 'shared/user-card', locals: { user: user } %>
-
+    <div class="text-center ">
+      <button type="button" class="text"> See all posts</button>
+    </div>
 <div>

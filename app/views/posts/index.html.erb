@@ -1,10 +1,8 @@
 
 <div>
 
-  <h3 class="border ps-2 w-25 m-2 p-4 border-dark"> <%= @user.name %> </h3> <br>
-     
+  <h3 class="border ps-2 w-25 m-2 p-4 border-dark"> <%= @user.name %> </h3> <br> 
       <% @user.recent_posts.each do |post| %>
-
        <div>
        <div class="border h-50 w-50 p-2 m-2 border-dark">
         <%= post.title %> <br>
