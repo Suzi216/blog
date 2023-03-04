@@ -12,6 +12,7 @@
 
   </div> <br>
         <% @user.recent_posts.each do |post| %>
+        <%= link_to "posts/#{post.id}/" do %>
        <div class="border mb-2 m-5 p-3 border-dark" style="max-width: 1140px;">
         Post: #<%= post.id %> <br> <br>
         <%= post.text %> <br>
@@ -20,6 +21,7 @@
           Likes <%= post.likes_count%> </div> 
         </p> 
        </div>
+       <% end %>
           <div  class="border mb-2 m-5 mt-0 p-2 border-dark" style="max-width: 1140px;">
             <% post.recent_comments.each do |comment| %>
               <p><%= comment.author.name %>
@@ -29,7 +31,7 @@
       <% end %>
   <div class="  mb-2 m-5 text-center" style="max-width: 1140px;">
     <div class="text-center ">
-      <button type="button" class="text"> Pagination</button>
+    <%= link_to "Create some post", new_user_post_path %>
     </div>
   </div>
 
