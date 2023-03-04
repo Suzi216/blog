@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-
- before_action :current_user
+  before_action :current_user
 
   def current_user
     User.first

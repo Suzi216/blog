@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user= current_user
+    @user = current_user
     @posts = Post.all.where(author_id: @user.id)
     # @user = User.find(params[:author_id])
   end
@@ -8,12 +8,12 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = current_user
-    @comment= Comment
+    @comment = Comment
     # @comments/ = @post.comments
   end
 
   def create
-    @post=Post.new(params.require(:post).permit(:title , :text))
+    @post = Post.new(params.require(:post).permit(:title, :text))
     @user = current_user
     @post.author_id = @user.id
     if @post.save
@@ -24,8 +24,6 @@ class PostsController < ApplicationController
   end
 
   def new
-      @post =Post.new
+    @post = Post.new
   end
-  
-
 end
