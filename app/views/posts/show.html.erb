@@ -9,10 +9,18 @@
        </div><br>
 <div class="border mb-2 m-5 mt-0 p-2 border-dark" style="max-width: 1140px;">
     <div >
-      <% @comments.each do |comment| %>
+      <% @post.comments.each do |comment| %>
           <p ><%= comment.author.name %>: <%= comment.text %></p>
               <% end %>
     </div>
       </div>
 
+<div style="width:90%; margin-top: 2rem;">
+  <div class="actions">
+    <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post), class: 'actions__button' %>
+
+
+
+    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post, class: 'actions__button' %>
+  </div>
 </div>
