@@ -15,12 +15,11 @@
     </div>
       </div>
 
-<div style="width:90%; margin-top: 2rem;">
-  <div class="actions">
-    <%= link_to 'Add a new comment', new_user_post_comment_path(@user, @post), class: 'actions__button' %>
+<div class="  mb-2 m-5 text-center" style="max-width: 1140px;" >
+  <div class="text-center">
+    <%= link_to 'Add comment', new_user_post_comment_path(@user, @post), class: 'actions__button' %>
 
-
-
-    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post, class: 'actions__button' %>
+ <br> <br>
+    <%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %>
   </div>
 </div>

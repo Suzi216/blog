@@ -2,14 +2,12 @@ class PostsController < ApplicationController
   def index
     @user = current_user
     @posts = Post.all.where(author_id: @user.id)
-    # @user = User.find(params[:author_id])
   end
 
   def show
     @post = Post.find(params[:id])
     @user = current_user
     @comment = Comment
-    # @comments/ = @post.comments
   end
 
   def create
