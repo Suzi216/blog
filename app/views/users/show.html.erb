@@ -1,1 +1,35 @@
-<h1>User details</h1>
+<h1  class='text-center mt-4'>User details</h1>
+
+<div class="">
+   <div class=" d-flex mb-2 m-5 text-center" style="max-width: 1140px;">
+        <div class="col-md-4">
+          <img src=<%=@user.photo%> style="max-height: 90px;" >
+        </div>
+        <div class="d-flex w-100 border p-4 justify-content-between align-items-end border-dark">
+        <h2 class="pe-5"><%= @user.name  %> </h2>
+        <span> Number of posts: <%= @user.orders  %> <span>
+        </div>
+
+  </div> <br>
+      <div class="border mb-2 m-5 p-4 border-dark" style="max-width: 1140px;">
+       <span>bio </span> <br>
+      <%= @user.bio %>
+      </div>  <br>
+      <% @user.recent_posts.each do |post| %>
+       <div class="border mb-2 m-5 p-3 border-dark" style="max-width: 1140px;">
+       Post: #<%= post.id %> <br> <br>
+        <%= post.text %> <br>
+        <div class="d-flex flex-row justify-content-end" > 
+          <p class="m-0">Comments <%= post.comments_count%>,  
+          Likes <%= post.likes_count%> </div> 
+        </p>
+       </div>
+      <% end %>
+  <div class="  mb-2 m-5 text-center" style="max-width: 1140px;">
+  
+    <div class="text-center ">
+      <%= link_to 'See All Posts', "#{@user.id}/posts", class: 'link-btn' %>
+    </div>
+  </div>
+<div>
+

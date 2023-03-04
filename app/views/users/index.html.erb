@@ -1,1 +1,17 @@
-<h1>List of All Users</h1>
+
+<div >
+<h1 class='text-center mt-4'>Users</h1>
+  <% @users.each do |user| %>
+  <%= link_to "users/#{user.id}" do %>
+ <div  class=" d-flex justify-content-between mb-2 m-5 text-center" style="max-width: 1140px;">
+    <div class="col-md-4">
+      <img src=<%=user.photo%> style="max-height: 90px;" >
+    </div>
+        <div class="d-flex w-100 border p-4 justify-content-between align-items-end border-dark">
+        <h2 class="pe-5"><%= user.name  %> </h2>
+        <span> Number of posts: <%= user.orders  %> <span>
+        </div>
+  </div>
+   <% end %>
+  <% end %>
+<div>

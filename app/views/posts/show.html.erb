@@ -1,1 +1,18 @@
-<h1>Post details</h1>
+
+       <div class="border mb-2 m-5 p-3 border-dark" style="max-width: 1140px;">
+        Post: #<%= @post.id %> by <%= @user.name%> <br> <br>
+        <%= @post.text %> <br>
+        <div class="d-flex flex-row justify-content-end" > 
+          <p class="m-0">Comments <%= @post.comments_count%>,  
+          Likes <%= @post.likes_count%> </div> 
+        </p> 
+       </div><br>
+<div class="border mb-2 m-5 mt-0 p-2 border-dark" style="max-width: 1140px;">
+    <div >
+      <% @comments.each do |comment| %>
+          <p ><%= comment.author.name %>: <%= comment.text %></p>
+              <% end %>
+    </div>
+      </div>
+
+</div>
