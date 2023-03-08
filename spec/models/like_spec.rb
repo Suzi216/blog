@@ -11,6 +11,4 @@ describe Like, type: :model do
   it 'test update_likes_counter method ' do
     expect(@post.likes_counter).to eq 1
   end
-
-
 end

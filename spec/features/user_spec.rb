@@ -11,23 +11,23 @@ RSpec.describe User, type: :system do
       page.has_content?(subject.name)
     end
 
-
     it 'I can see the profile picture for each user' do
       visit users_path
       page.has_content?(subject.posts_counter)
     end
 
-       it 'I can see the number of posts each user has written.' do
+    it 'I can see the number of posts each user has written.' do
       visit users_path
       page.has_content?(subject.posts_counter)
     end
 
     it "When I click on a user, I am redirected to that user's show page." do
-      user2 = User.create(name: 'Besa', posts_counter: 2, photo: 'https://www.shutterstock.com/image-photo/white-lily-flower-isolated-on-260nw-1705942645.jpg', bio: 'Developer')
+      user2 = User.create(name: 'Besa', posts_counter: 2,
+                          photo: 'https://www.shutterstock.com/image-photo/white-lily-flower-isolated-on-260nw-1705942645.jpg', bio: 'Developer')
       visit user_path(user2.id)
       page.has_content?('Besa')
     end
-   end
+  end
 
   describe 'User show page' do
     it "I can see the user's profile picture." do
@@ -74,5 +74,5 @@ RSpec.describe User, type: :system do
       visit user_posts_path(subject.id)
       page.has_content?('Suzana')
     end
-   end
+  end
 end
