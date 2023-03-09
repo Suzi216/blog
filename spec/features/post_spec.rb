@@ -17,7 +17,7 @@ RSpec.describe Post, type: :system do
 
     it 'Show user username.' do
       visit user_posts_path(user.id)
-      page.has_content?(user.name)
+      expect(page).to have_content(user.name)
     end
 
     it 'Show the number of post.' do

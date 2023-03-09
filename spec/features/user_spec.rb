@@ -8,7 +8,7 @@ RSpec.describe User, type: :system do
   describe 'index page' do
     it 'I can see the username of all other users' do
       visit users_path
-      page.has_content?(subject.name)
+      expect(page).to have_content(subject.name)
     end
 
     it 'I can see the profile picture for each user' do
@@ -29,7 +29,7 @@ RSpec.describe User, type: :system do
     end
   end
 
-  describe 'User show page' do
+   describe 'User show page' do
     it "I can see the user's profile picture." do
       visit user_path(subject.id)
       page.has_css?('.img-fluid')
@@ -37,7 +37,7 @@ RSpec.describe User, type: :system do
 
     it "I can see the user's username." do
       visit user_path(subject.id)
-      page.has_content?(subject.name)
+      expect(page).to have_content(subject.name)
     end
 
     it 'I can see the number of posts the user has written.' do
@@ -47,12 +47,12 @@ RSpec.describe User, type: :system do
 
     it "I can see the user's bio." do
       visit user_path(subject.id)
-      page.has_content?(subject.bio)
+      expect(page).to have_content(subject.bio)
     end
 
     it "I can see the user's first 3 posts." do
-      Post.create([{ author: subject, title: 'First Post', text: 'My first post' },
-                   { author: subject, title: 'Second Post', text: 'My Second post' }, { author: subject, title: 'Third Post', text: 'My Third post' }])
+      Post.create([{ author: subject, title: 'Post1', text: 'My first post' },
+                   { author: subject, title: 'Post2', text: 'My Second post' }, { author: subject, title: 'Post3', text: 'My Third post' }])
       visit user_path(subject.id)
       page.has_content?(subject.posts)
     end
@@ -66,7 +66,7 @@ RSpec.describe User, type: :system do
       post = Post.create(author: subject, title: 'Post', text: 'More post')
       visit user_path(subject.id)
       visit user_post_path(subject.id, post.id)
-      page.has_content?(post.title)
+      expect(page).to have_content(post.title)
     end
 
     it "When I click to see all posts, it redirects me to the user's post's index page." do
@@ -74,5 +74,5 @@ RSpec.describe User, type: :system do
       visit user_posts_path(subject.id)
       page.has_content?('Suzana')
     end
-  end
+   end
 end
