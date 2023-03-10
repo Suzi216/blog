@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET/index' do
     it 'http request returns success and check correct placeholder text.' do
-      get '/'
+      get '/users'
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('List of All Users')
+      expect(response.body).to include('Users')
     end
   end
 

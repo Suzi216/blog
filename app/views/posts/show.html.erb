@@ -9,7 +9,7 @@
        </div><br>
 <div class="border mb-2 m-5 mt-0 p-2 border-dark" style="max-width: 1140px;">
     <div >
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.includes(:author).each do |comment| %>
           <p ><%= comment.author.name %>: <%= comment.text %></p>
               <% end %>
     </div>
