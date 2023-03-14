@@ -28,7 +28,7 @@ RSpec.describe User, type: :system do
       page.has_content?('Besa')
     end
   end
-  
+
   describe 'User show page' do
     it "I can see the user's profile picture." do
       visit user_path(subject.id)
@@ -75,6 +75,4 @@ RSpec.describe User, type: :system do
       page.has_content?('Suzana')
     end
   end
-
-  
 end
