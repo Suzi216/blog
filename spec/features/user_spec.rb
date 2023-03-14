@@ -28,6 +28,53 @@ RSpec.describe User, type: :system do
       page.has_content?('Besa')
     end
   end
+  
+  describe 'User show page' do
+    it "I can see the user's profile picture." do
+      visit user_path(subject.id)
+      page.has_css?('.img-fluid')
+    end
+
+    it "I can see the user's username." do
+      visit user_path(subject.id)
+      expect(page).to have_content(subject.name)
+    end
+
+    it 'I can see the number of posts the user has written.' do
+      visit user_path(subject.id)
+      page.has_content?(subject.posts_counter)
+    end
+
+    it "I can see the user's bio." do
+      visit user_path(subject.id)
+      expect(page).to have_content(subject.bio)
+    end
+
+    it "I can see the user's first 3 posts." do
+      Post.create([{ author: subject, title: 'Post1', text: 'My first post' },
+                   { author: subject, title: 'Post2', text: 'My Second post' }, { author: subject, title: 'Post3', text: 'My Third post' }])
+      visit user_path(subject.id)
+      page.has_content?(subject.posts)
+    end
+
+    it "I can see a button that lets me view all of a user's posts." do
+      visit user_path(subject.id)
+      page.has_button?('See all posts')
+    end
+
+    it "When I click a user's post, it redirects me to that post's show page." do
+      post = Post.create(author: subject, title: 'Post', text: 'More post')
+      visit user_path(subject.id)
+      visit user_post_path(subject.id, post.id)
+      expect(page).to have_content(post.title)
+    end
+
+    it "When I click to see all posts, it redirects me to the user's post's index page." do
+      visit user_path(subject.id)
+      visit user_posts_path(subject.id)
+      page.has_content?('Suzana')
+    end
+  end
 
   
 end
